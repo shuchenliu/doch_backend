@@ -102,6 +102,11 @@ ENV/
 # pictures:
 *.png
 
+# development:
+build/
+static/
+
+
 # sensitive file:
 utils/tweetify.py
 *.db

@@ -92,19 +92,6 @@ class Target_Search(Resource):
             user.tweets_onfile += len(result["tweets"])
             user.save_to_db()
 
-            '''
-            the tweet stats updating module
-
-
-            today_date = time_now.date()
-            pre_tweets = TweetModel.find_recent_week_no_rt(user_data['id'], today_date)
-
-            for t in pre_tweets:
-                new_t = Tweetify.get_status(t.id)
-                if new_t != -1:
-                    setattr(t, "rt_count", new_t.retweet_count)
-                    setattr(t, "fv_count", new_t.favorite_count)
-            '''
         else:
             new_user = UserModel(tweets_onfile = len(result["tweets"]), **user_data)
             new_user.save_to_db()

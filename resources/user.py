@@ -10,13 +10,9 @@ class User(Resource):
     def get(self, user_id):
 
         user = UserModel.find_by_user_id(user_id)
+        
         if not user:
             user = UserModel.find_by_screen_name(user_id)
-
-        ''' inspect module
-        columns = [m.key for m in user.__table__.columns]
-        print(columns)
-        '''
 
         if user:
             return {"user" : user.json()}, 200
