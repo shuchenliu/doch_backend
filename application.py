@@ -1,6 +1,7 @@
 import os, sys
 cwd = os.getcwd()
 print(cwd)
+sys.path.append(cwd)
 sys.path.append(os.path.join(cwd, 'resources'))
 sys.path.append(os.path.join(cwd, 'models'))
 sys.path.append(os.path.join(cwd, 'utils'))
