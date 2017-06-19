@@ -18,6 +18,8 @@ side note:
 Serious corner case: name changed and the database would meddle two different accounts together:
 so => double check by ID
 '''
+
+
 import traceback
 from db import db
 from flask_restful import Resource, reqparse
@@ -29,7 +31,7 @@ from models.user import UserModel
 from models.target_search import SearchModel
 from models.tweets import TweetModel
 
-from utils.tweetify import Tweetify
+from resources.tweetify import Tweetify
 
 class Target_Search(Resource):
 

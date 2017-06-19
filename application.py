@@ -1,10 +1,4 @@
 import os, sys
-cwd = os.getcwd()
-print(cwd)
-sys.path.append(cwd)
-sys.path.append(os.path.join(cwd, 'resources'))
-sys.path.append(os.path.join(cwd, 'models'))
-sys.path.append(os.path.join(cwd, 'utils'))
 
 from flask import Flask, request, url_for, render_template, send_file
 from flask_restful import Resource, Api
@@ -20,7 +14,6 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 api = Api(application)
 
-print(__name__)
 
 @application.route('/')
 def landing():
