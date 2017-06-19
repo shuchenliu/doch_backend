@@ -110,3 +110,8 @@ static/
 # sensitive file:
 utils/tweetify.py
 *.db
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
