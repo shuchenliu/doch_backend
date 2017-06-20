@@ -13,7 +13,9 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 api = Api(application)
 
-print("haha {}".format(__name__))
+f = open('name.txt', w)
+f.write(__name__)
+f.close
 
 
 @application.route('/')
