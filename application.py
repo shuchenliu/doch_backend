@@ -1,6 +1,4 @@
 import os, sys
-
-from db import db
 from flask import Flask, request, url_for, render_template, send_file
 from flask_restful import Resource, Api
 from resources.target_search import Target_Search, Update_Search
@@ -47,8 +45,17 @@ def create_db():
 ##########################
     db.create_all()
 
+
+from db import db
+db.init_app(application)
+#application.run(host = '127.0.0.1', port = 5000, debug=True)
+application.run(host='0.0.0.0', debug=False)
+
+'''
 if __name__ == '__main__' or __name__ == 'application' or __name__ == 'wsgi_app':
     from db import db
     db.init_app(application)
     #application.run(host = '127.0.0.1', port = 5000, debug=True)
-    application.run(host='0.0.0.0')
+    application.run(host='0.0.0.0', debug=False)
+
+'''
