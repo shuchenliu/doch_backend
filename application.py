@@ -49,7 +49,7 @@ def create_db():
 
 #application.run(host = '127.0.0.1', port = 5000, debug=True)
 
-if __name__ == "wsgi":
+if __name__ == "wsgi" or __name__ == "WSGI":
     from db import db
     db.init_app(application)
     application.run(host='0.0.0.0', debug=False)
