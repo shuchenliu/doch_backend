@@ -1,5 +1,6 @@
 import os, sys
 
+from db import db
 from flask import Flask, request, url_for, render_template, send_file
 from flask_restful import Resource, Api
 from resources.target_search import Target_Search, Update_Search
