@@ -13,10 +13,6 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 api = Api(application)
 
-f = open('name.txt', w)
-f.write(__name__)
-f.close
-
 
 @application.route('/')
 def landing():
