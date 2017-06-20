@@ -46,10 +46,13 @@ def create_db():
     db.create_all()
 
 
-from db import db
-db.init_app(application)
+
 #application.run(host = '127.0.0.1', port = 5000, debug=True)
-application.run(host='0.0.0.0', debug=False)
+
+if __name__ == "wsgi":
+    from db import db
+    db.init_app(application)
+    application.run(host='0.0.0.0', debug=False)
 
 '''
 if __name__ == '__main__' or __name__ == 'application' or __name__ == 'wsgi_app':
