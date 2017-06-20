@@ -13,6 +13,8 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 api = Api(application)
 
+print("haha {}".format(__name__))
+
 
 @application.route('/')
 def landing():
